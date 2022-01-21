@@ -103,7 +103,7 @@
             this.Name = "frmExpRelNascimento";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Exportar Relatório de Nascimento";
+            this.Text = "Exportar Relatório de Nascimentos";
             this.ResumeLayout(false);
 
         }

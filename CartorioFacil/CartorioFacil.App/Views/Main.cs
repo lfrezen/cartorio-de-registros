@@ -61,6 +61,14 @@ namespace CartorioFacil.App
             }
         }
 
+        public void btnExportarCasamento_Click(object sender, EventArgs e)
+        {
+            using (var form = new fmrExpRelCasamento())
+            {
+                form.ShowDialog();
+            }
+        }
+
         #endregion
 
         #region MenuFerramentas

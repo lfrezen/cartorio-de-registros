@@ -43,18 +43,22 @@
             this.óbitosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarDadosEmXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.casamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nascimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlPrincipal = new System.Windows.Forms.TabControl();
             this.tabCasamento = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabNascimento = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tabObito = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.btnNovoNascimento = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataRegistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataCasamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeCompletoPrimeiroConjugeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeCompletoSegundoConjugeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.casamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabNascimento = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataRegistroDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataNascimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,8 +68,6 @@
             this.cpfDoPaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpfDaMaeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nascimentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabObito = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataRegistroDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataObitoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,18 +76,16 @@
             this.nomeDoPaiDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDaMaeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obitoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnNovoNascimento = new System.Windows.Forms.Button();
-            this.casamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControlPrincipal.SuspendLayout();
             this.tabCasamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.casamentoBindingSource)).BeginInit();
             this.tabNascimento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nascimentoBindingSource)).BeginInit();
             this.tabObito.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.casamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nascimentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obitoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,20 +167,21 @@
             // casamentosToolStripMenuItem
             // 
             this.casamentosToolStripMenuItem.Name = "casamentosToolStripMenuItem";
-            this.casamentosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.casamentosToolStripMenuItem.Text = "&Casamentos (WIP)";
+            this.casamentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.casamentosToolStripMenuItem.Text = "&Casamentos";
+            this.casamentosToolStripMenuItem.Click += new System.EventHandler(this.btnExportarCasamento_Click);
             // 
             // nascimentosToolStripMenuItem
             // 
             this.nascimentosToolStripMenuItem.Name = "nascimentosToolStripMenuItem";
-            this.nascimentosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.nascimentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nascimentosToolStripMenuItem.Text = "&Nascimentos";
             this.nascimentosToolStripMenuItem.Click += new System.EventHandler(this.btnExportarNascimento_Click);
             // 
             // óbitosToolStripMenuItem
             // 
             this.óbitosToolStripMenuItem.Name = "óbitosToolStripMenuItem";
-            this.óbitosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.óbitosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.óbitosToolStripMenuItem.Text = "&Óbitos (WIP)";
             // 
             // ferramentasToolStripMenuItem
@@ -200,10 +201,17 @@
             this.exportarDadosEmXMLToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.exportarDadosEmXMLToolStripMenuItem.Text = "&Exportar Dados em XML";
             // 
+            // casamentoToolStripMenuItem
+            // 
+            this.casamentoToolStripMenuItem.Name = "casamentoToolStripMenuItem";
+            this.casamentoToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.casamentoToolStripMenuItem.Text = "Casamento";
+            this.casamentoToolStripMenuItem.Click += new System.EventHandler(this.ExportarCasamentoXML);
+            // 
             // nascimentoToolStripMenuItem
             // 
             this.nascimentoToolStripMenuItem.Name = "nascimentoToolStripMenuItem";
-            this.nascimentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nascimentoToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.nascimentoToolStripMenuItem.Text = "&Nascimento";
             this.nascimentoToolStripMenuItem.Click += new System.EventHandler(this.ExportarNascimentoXML);
             // 
@@ -259,6 +267,92 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // tabNascimento
+            // 
+            this.tabNascimento.Controls.Add(this.dataGridView2);
+            this.tabNascimento.Location = new System.Drawing.Point(4, 22);
+            this.tabNascimento.Name = "tabNascimento";
+            this.tabNascimento.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNascimento.Size = new System.Drawing.Size(1000, 399);
+            this.tabNascimento.TabIndex = 1;
+            this.tabNascimento.Text = "Nascimentos";
+            this.tabNascimento.UseVisualStyleBackColor = true;
+            this.tabNascimento.Enter += new System.EventHandler(this.TabNascimento_Load);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.dataRegistroDataGridViewTextBoxColumn1,
+            this.dataNascimentoDataGridViewTextBoxColumn,
+            this.nomeDoRegistradoDataGridViewTextBoxColumn,
+            this.nomeDoPaiDataGridViewTextBoxColumn,
+            this.nomeDaMaeDataGridViewTextBoxColumn,
+            this.cpfDoPaiDataGridViewTextBoxColumn,
+            this.cpfDaMaeDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.nascimentoBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(-4, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(1004, 403);
+            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // tabObito
+            // 
+            this.tabObito.Controls.Add(this.dataGridView3);
+            this.tabObito.Location = new System.Drawing.Point(4, 22);
+            this.tabObito.Name = "tabObito";
+            this.tabObito.Padding = new System.Windows.Forms.Padding(3);
+            this.tabObito.Size = new System.Drawing.Size(1000, 399);
+            this.tabObito.TabIndex = 2;
+            this.tabObito.Text = "Óbitos";
+            this.tabObito.UseVisualStyleBackColor = true;
+            this.tabObito.BindingContextChanged += new System.EventHandler(this.TabObito_Load);
+            this.tabObito.CursorChanged += new System.EventHandler(this.TabObito_Load);
+            this.tabObito.Click += new System.EventHandler(this.TabObito_Load);
+            this.tabObito.Enter += new System.EventHandler(this.TabObito_Load);
+            this.tabObito.Validated += new System.EventHandler(this.TabObito_Load);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn2,
+            this.dataRegistroDataGridViewTextBoxColumn2,
+            this.dataObitoDataGridViewTextBoxColumn,
+            this.nomeDoFalecidoDataGridViewTextBoxColumn,
+            this.dataNascimentoDataGridViewTextBoxColumn1,
+            this.nomeDoPaiDataGridViewTextBoxColumn1,
+            this.nomeDaMaeDataGridViewTextBoxColumn1});
+            this.dataGridView3.DataSource = this.obitoBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(1000, 399);
+            this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // btnNovoNascimento
+            // 
+            this.btnNovoNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoNascimento.Location = new System.Drawing.Point(12, 472);
+            this.btnNovoNascimento.Name = "btnNovoNascimento";
+            this.btnNovoNascimento.Size = new System.Drawing.Size(147, 59);
+            this.btnNovoNascimento.TabIndex = 3;
+            this.btnNovoNascimento.Text = "&Novo...";
+            this.btnNovoNascimento.UseVisualStyleBackColor = true;
+            this.btnNovoNascimento.Click += new System.EventHandler(this.btnNovoRegistro_Click);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -300,42 +394,6 @@
             // casamentoBindingSource
             // 
             this.casamentoBindingSource.DataSource = typeof(CartorioFacil.App.Entities.Casamento);
-            // 
-            // tabNascimento
-            // 
-            this.tabNascimento.Controls.Add(this.dataGridView2);
-            this.tabNascimento.Location = new System.Drawing.Point(4, 22);
-            this.tabNascimento.Name = "tabNascimento";
-            this.tabNascimento.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNascimento.Size = new System.Drawing.Size(1000, 399);
-            this.tabNascimento.TabIndex = 1;
-            this.tabNascimento.Text = "Nascimentos";
-            this.tabNascimento.UseVisualStyleBackColor = true;
-            this.tabNascimento.Enter += new System.EventHandler(this.TabNascimento_Load);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.dataRegistroDataGridViewTextBoxColumn1,
-            this.dataNascimentoDataGridViewTextBoxColumn,
-            this.nomeDoRegistradoDataGridViewTextBoxColumn,
-            this.nomeDoPaiDataGridViewTextBoxColumn,
-            this.nomeDaMaeDataGridViewTextBoxColumn,
-            this.cpfDoPaiDataGridViewTextBoxColumn,
-            this.cpfDaMaeDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.nascimentoBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(-4, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1004, 403);
-            this.dataGridView2.TabIndex = 0;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -401,45 +459,6 @@
             // 
             this.nascimentoBindingSource.DataSource = typeof(CartorioFacil.App.Entities.Nascimento);
             // 
-            // tabObito
-            // 
-            this.tabObito.Controls.Add(this.dataGridView3);
-            this.tabObito.Location = new System.Drawing.Point(4, 22);
-            this.tabObito.Name = "tabObito";
-            this.tabObito.Padding = new System.Windows.Forms.Padding(3);
-            this.tabObito.Size = new System.Drawing.Size(1000, 399);
-            this.tabObito.TabIndex = 2;
-            this.tabObito.Text = "Óbitos";
-            this.tabObito.UseVisualStyleBackColor = true;
-            this.tabObito.BindingContextChanged += new System.EventHandler(this.TabObito_Load);
-            this.tabObito.CursorChanged += new System.EventHandler(this.TabObito_Load);
-            this.tabObito.Click += new System.EventHandler(this.TabObito_Load);
-            this.tabObito.Enter += new System.EventHandler(this.TabObito_Load);
-            this.tabObito.Validated += new System.EventHandler(this.TabObito_Load);
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2,
-            this.dataRegistroDataGridViewTextBoxColumn2,
-            this.dataObitoDataGridViewTextBoxColumn,
-            this.nomeDoFalecidoDataGridViewTextBoxColumn,
-            this.dataNascimentoDataGridViewTextBoxColumn1,
-            this.nomeDoPaiDataGridViewTextBoxColumn1,
-            this.nomeDaMaeDataGridViewTextBoxColumn1});
-            this.dataGridView3.DataSource = this.obitoBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(1000, 399);
-            this.dataGridView3.TabIndex = 0;
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
-            // 
             // idDataGridViewTextBoxColumn2
             // 
             this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
@@ -493,24 +512,6 @@
             // 
             this.obitoBindingSource.DataSource = typeof(CartorioFacil.App.Entities.Obito);
             // 
-            // btnNovoNascimento
-            // 
-            this.btnNovoNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovoNascimento.Location = new System.Drawing.Point(12, 472);
-            this.btnNovoNascimento.Name = "btnNovoNascimento";
-            this.btnNovoNascimento.Size = new System.Drawing.Size(147, 59);
-            this.btnNovoNascimento.TabIndex = 3;
-            this.btnNovoNascimento.Text = "&Novo...";
-            this.btnNovoNascimento.UseVisualStyleBackColor = true;
-            this.btnNovoNascimento.Click += new System.EventHandler(this.btnNovoRegistro_Click);
-            // 
-            // casamentoToolStripMenuItem
-            // 
-            this.casamentoToolStripMenuItem.Name = "casamentoToolStripMenuItem";
-            this.casamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.casamentoToolStripMenuItem.Text = "Casamento";
-            this.casamentoToolStripMenuItem.Click += new System.EventHandler(this.ExportarCasamentoXML);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,12 +533,12 @@
             this.tabControlPrincipal.ResumeLayout(false);
             this.tabCasamento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.casamentoBindingSource)).EndInit();
             this.tabNascimento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nascimentoBindingSource)).EndInit();
             this.tabObito.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.casamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nascimentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obitoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
