@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using CartorioFacil.App.Views;
 
 namespace CartorioFacil.App
 {
@@ -13,7 +14,7 @@ namespace CartorioFacil.App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new frmLogin());
         }
     }
 }

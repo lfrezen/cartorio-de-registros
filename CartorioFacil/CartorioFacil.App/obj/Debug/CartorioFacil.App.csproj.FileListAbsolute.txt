@@ -51,3 +51,5 @@ C:\Dev\cartorio-de-registros\CartorioFacil\CartorioFacil.App\obj\Debug\CartorioF
 C:\Dev\cartorio-de-registros\CartorioFacil\CartorioFacil.App\obj\Debug\CartorioFacil.App.pdb
 C:\Dev\cartorio-de-registros\CartorioFacil\CartorioFacil.App\obj\Debug\CartorioFacil.App.csproj.AssemblyReference.cache
 C:\Dev\cartorio-de-registros\CartorioFacil\CartorioFacil.App\obj\Debug\CartorioFacil.App.Views.fmrExpRelCasamento.resources
+C:\Dev\cartorio-de-registros\CartorioFacil\CartorioFacil.App\obj\Debug\CartorioFacil.App.csproj.SuggestedBindingRedirects.cache
+C:\Dev\cartorio-de-registros\CartorioFacil\CartorioFacil.App\obj\Debug\CartorioFacil.App.Views.frmLogin.resources
